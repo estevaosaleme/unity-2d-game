@@ -50,7 +50,7 @@ public class playerController : MonoBehaviour
     // called after a period of time (not for every frame like the method update())
     void FixedUpdate() {
 
-        // check if we are grounded. if no, then we are falling
+        // check if we are grounded - if not, then we are falling
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         myAnim.SetBool("isGrounded", grounded);
 
