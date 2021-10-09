@@ -75,7 +75,6 @@ public class playerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-        //Debug.Log(transform.localScale.y.ToString());
     }
 
     void fireRocket(){
@@ -86,7 +85,6 @@ public class playerController : MonoBehaviour
             } else {
                 Instantiate(bullet, gunTip.position, Quaternion.Euler(new Vector3(0,0,180f)));
             }
-            //Debug.Log(gunTip.position.y.ToString());
         }
     }
 }
