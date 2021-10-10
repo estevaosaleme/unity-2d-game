@@ -56,6 +56,7 @@ public class playerHealth : MonoBehaviour
 
         currentHealth -= damage;
         
+		// two alternatives for playing sound
         //playerAS.clip = playerHurt;
         //playerAS.Play();
         playerAS.PlayOneShot(playerHurt);
