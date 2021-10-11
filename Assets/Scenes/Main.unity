@@ -135,12 +135,12 @@ PrefabInstance:
     - target: {fileID: 581133696070806942, guid: 4910450b7efd08a47a5581adff80494c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.16
+      value: 8.14
       objectReference: {fileID: 0}
     - target: {fileID: 581133696070806942, guid: 4910450b7efd08a47a5581adff80494c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.76
+      value: -4.63
       objectReference: {fileID: 0}
     - target: {fileID: 581133696070806942, guid: 4910450b7efd08a47a5581adff80494c,
         type: 3}
@@ -1339,6 +1339,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 1818989505427790820, guid: 88c2ed8718c937c48a75a0f70d327a53, type: 3}
   enemySlider: {fileID: 1168934707}
+  drops: 1
+  theDrop: {fileID: 2019281319013395655, guid: 17ab34b5a590e5c41b44f587117994a2, type: 3}
+  dropChance: 50
   enemyMaxHealth: 40
 --- !u!114 &1687456018
 MonoBehaviour:
@@ -1785,6 +1788,7 @@ MonoBehaviour:
   fullHealth: 20
   deathFX: {fileID: 1818989505427790820, guid: 88c2ed8718c937c48a75a0f70d327a53, type: 3}
   playerHurt: {fileID: 8300000, guid: 3eb1981e038743e46b2d1a0e9c9e0d3a, type: 3}
+  playerAddHealth: {fileID: 8300000, guid: 4a70be0a3a133b3479f0e4fa8747acf3, type: 3}
   healthSlider: {fileID: 1334798098}
   damageScreen: {fileID: 346696542}
 --- !u!82 &1808066811
