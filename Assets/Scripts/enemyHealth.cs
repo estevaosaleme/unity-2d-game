@@ -8,6 +8,10 @@ public class enemyHealth : MonoBehaviour
     public GameObject deathFX;
     public Slider enemySlider; 
 
+    public bool drops;
+    public GameObject theDrop;
+    public int dropChance;
+
     public float enemyMaxHealth;
 
     float currentHealth;
@@ -41,5 +45,8 @@ public class enemyHealth : MonoBehaviour
     void makeDead(){
         Instantiate(deathFX, transform.position, transform.rotation);
         Destroy(gameObject);
+        if (drops && Random.Range(1,100) <= dropChance){
+            Instantiate(theDrop, transform.position, transform.rotation);
+        }
     }
 }

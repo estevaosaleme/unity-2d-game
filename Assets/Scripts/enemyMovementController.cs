@@ -27,7 +27,6 @@ public class enemyMovementController : MonoBehaviour
     {
         enemyAnimator = GetComponentInChildren<Animator>();
         enemyRB = GetComponent<Rigidbody2D>();
-
     }
 
     // Update is called once per frame
@@ -78,9 +77,11 @@ public class enemyMovementController : MonoBehaviour
     void flipFacing(){
         if (!canFlip)
             return;
-        float facingX = enemyGraphic.transform.localScale.x;
-        facingX *= -1f;
-        enemyGraphic.transform.localScale = new Vector3(facingX, enemyGraphic.transform.localScale.y, enemyGraphic.transform.localScale.z);
-        facingRight = !facingRight;
+        if (enemyGraphic != null){
+            float facingX = enemyGraphic.transform.localScale.x;
+            facingX *= -1f;
+            enemyGraphic.transform.localScale = new Vector3(facingX, enemyGraphic.transform.localScale.y, enemyGraphic.transform.localScale.z);
+            facingRight = !facingRight;
+        }
     }
 }

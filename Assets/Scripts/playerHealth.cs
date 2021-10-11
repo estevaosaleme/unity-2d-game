@@ -9,6 +9,7 @@ public class playerHealth : MonoBehaviour
     public float fullHealth;
     public GameObject deathFX;
     public AudioClip playerHurt;
+    public AudioClip playerAddHealth;
 
     float currentHealth;
 
@@ -67,6 +68,15 @@ public class playerHealth : MonoBehaviour
         if (currentHealth <= 0) {
             makeDead();
         }
+    }
+
+    public void addHealth(float healthAmount){
+        currentHealth += healthAmount;
+        if (currentHealth > fullHealth){
+            currentHealth = fullHealth;
+        }
+        playerAS.PlayOneShot(playerAddHealth);
+        healthSlider.value = currentHealth;
     }
 
     public void makeDead(){
