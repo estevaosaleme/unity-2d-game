@@ -15,6 +15,7 @@ public class playerHealth : MonoBehaviour
 
     playerController controlMovement;
 
+    public AudioClip playerDeathSound;
     AudioSource playerAS;
 
     //HUD variables
@@ -82,5 +83,6 @@ public class playerHealth : MonoBehaviour
     public void makeDead(){
         Instantiate(deathFX, transform.position, transform.rotation);
         Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(playerDeathSound, transform.position, 10f);
     }
 }
