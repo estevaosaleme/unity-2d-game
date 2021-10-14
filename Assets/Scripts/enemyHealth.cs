@@ -46,7 +46,7 @@ public class enemyHealth : MonoBehaviour
 
     void makeDead(){
         Instantiate(deathFX, transform.position, transform.rotation);
-        Destroy(gameObject);
+        Destroy(gameObject.transform.parent.gameObject);
         AudioSource.PlayClipAtPoint(deathKnell, transform.position, 10f);
         if (drops && Random.Range(1,100) <= dropChance){
             Instantiate(theDrop, transform.position, transform.rotation);
