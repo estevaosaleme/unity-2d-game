@@ -11,6 +11,8 @@ public class playerHealth : MonoBehaviour
     public AudioClip playerHurt;
     public AudioClip playerAddHealth;
 
+    public restartGame theGameManager;
+
     float currentHealth;
 
     playerController controlMovement;
@@ -21,6 +23,7 @@ public class playerHealth : MonoBehaviour
     //HUD variables
     public Slider healthSlider;
     public Image damageScreen;
+    public Text gameOverScreen;
 
     bool damaged = false;
     Color damagedColour = new Color(0f, 0f, 0f, 0.5f);
@@ -81,8 +84,14 @@ public class playerHealth : MonoBehaviour
     }
 
     public void makeDead(){
+        healthSlider.value = 0f;
         Instantiate(deathFX, transform.position, transform.rotation);
         Destroy(gameObject);
         AudioSource.PlayClipAtPoint(playerDeathSound, transform.position, 10f);
+
+        damageScreen.color = damagedColour;
+        Animator gameOverAnimator = gameOverScreen.GetComponent<Animator>();
+        gameOverAnimator.SetTrigger("gameOver");
+        theGameManager.restartTheGame();
     }
 }
