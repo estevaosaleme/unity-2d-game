@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 2879203458163208193}
   m_Layer: 9
   m_Name: spikeyRock
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -162,7 +162,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathFX: {fileID: 6160816079050811494, guid: 40077a4f33c45cf4587370c1d23fe723, type: 3}
   enemySlider: {fileID: 2879203456594279265}
+  drops: 0
+  theDrop: {fileID: 0}
+  dropChance: 0
   enemyMaxHealth: 20
+  deathKnell: {fileID: 0}
 --- !u!114 &2879203458163208193
 MonoBehaviour:
   m_ObjectHideFlags: 0
