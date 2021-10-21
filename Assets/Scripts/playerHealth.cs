@@ -24,6 +24,7 @@ public class playerHealth : MonoBehaviour
     public Slider healthSlider;
     public Image damageScreen;
     public Text gameOverScreen;
+    public Text winGameScreen;
 
     bool damaged = false;
     Color damagedColour = new Color(0f, 0f, 0f, 0.5f);
@@ -94,4 +95,12 @@ public class playerHealth : MonoBehaviour
         gameOverAnimator.SetTrigger("gameOver");
         theGameManager.restartTheGame();
     }
+
+    public void winGame(){
+        Destroy(gameObject);
+        theGameManager.restartTheGame();
+        Animator winGameAnimator = winGameScreen.GetComponent<Animator>();
+        winGameAnimator.SetTrigger("gameOver");
+    }
+
 }
